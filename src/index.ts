@@ -23,6 +23,8 @@ export default {
             ts += "function offset(): string;";
             ts += "function range(): LocationRange;";
 
+            ts += ast.initializer?.code;
+
             ast.rules.forEach((rule: ast.Rule, index: number, array: ast.Rule[]) => {
                 ts += astParser.parseRule(rule).toString();
             });
