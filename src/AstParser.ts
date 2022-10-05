@@ -11,11 +11,6 @@ class Result {
     public code: string = '';
 
     public toString(): string {
-        /*
-        if (this.code === "") {
-            return 'return null as unknown as '+this.types.join('|')+';'
-        }
-        */
         //NOTE: using let instead of const, to avoid error "'const' declarations must be initialized."
         let labels = this.labels.map(label => 'let '+label.name+':'+label.types.join('|')).join(';');
         if (labels !== "") {labels+=';';}
